@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PowerGym Pro — Soutenance PFE 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEX BACKGROUND LAYER -->
+<div class="hexfield" id="hexfield" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- TOP PROGRESS -->
+<div class="progress-rail" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- HEADER CHROME -->
+<header class="chrome-top">
+  <div class="brand-mark">
+    <svg class="hex-logo" viewBox="0 0 100 100" aria-hidden="true">
+      <polygon points="50,3 93,26.5 93,73.5 50,97 7,73.5 7,26.5" />
+      <text x="50" y="61" text-anchor="middle" class="hex-logo-text">PG</text>
+    </svg>
+    <span class="brand-word">POWER<em>GYM</em> <b>PRO</b></span>
+  </div>
+  <div class="chrome-right">
+    <span class="chip-status"><i class="dot-live"></i> SOUTENANCE PFE · 2026</span>
+  </div>
+</header>
+
+<!-- SLIDE DECK -->
+<main class="deck" id="deck">
+
+  <!-- 01 — COVER -->
+  <section class="slide" data-title="Ouverture" id="slide-0">
+    <div class="slide-inner cover">
+      <div class="cover-left reveal-group">
+        <p class="eyebrow reveal">PROJET DE FIN D'ÉTUDES · GÉNIE INFORMATIQUE · PROMOTION 2026</p>
+        <h1 class="cover-title reveal">
+          <span class="line">POWER<em>GYM</em></span>
+          <span class="line accent">PRO</span>
+        </h1>
+        <p class="cover-tagline reveal">MANAGE.&nbsp; TRAIN.&nbsp; GROW.</p>
+        <p class="cover-desc reveal">Plateforme web centralisée de gestion de salles de sport — multi-tenant, pensée et bâtie pour le marché marocain.</p>
+        <div class="cover-badges reveal">
+          <span class="badge">Laravel 12</span>
+          <span class="badge">MySQL 8</span>
+          <span class="badge">Multi-tenant</span>
+          <span class="badge">RBAC</span>
+          <span class="badge">QR Check-in</span>
+          <span class="badge">POS</span>
+        </div>
+      </div>
+      <div class="cover-right reveal-group">
+        <div class="hex-hero reveal">
+          <svg viewBox="0 0 400 400" class="hex-hero-svg">
+            <polygon points="200,20 360,110 360,290 200,380 40,290 40,110" class="hh-outer"/>
+            <polygon points="200,70 320,138 320,262 200,330 80,262 80,138" class="hh-mid"/>
+            <polygon points="200,120 280,166 280,234 200,280 120,234 120,166" class="hh-inner"/>
+            <text x="200" y="222" text-anchor="middle" class="hh-text">PG</text>
+          </svg>
+        </div>
+      </div>
+      <div class="cover-foot reveal">
+        <span>Étudiant&nbsp;: <strong>[Votre Nom]</strong></span>
+        <span class="sep">/</span>
+        <span>Encadrant&nbsp;: <strong>[Nom Encadrant]</strong></span>
+        <span class="sep">/</span>
+        <span>Année universitaire 2025 — 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — SOMMAIRE -->
+  <section class="slide" data-title="Sommaire" id="slide-1">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">02 — FEUILLE DE ROUTE</p>
+      <h2 class="slide-title reveal">Ce que je vais vous montrer</h2>
+      <div class="agenda-grid reveal-group">
+        <div class="agenda-item reveal"><span class="agenda-n">01</span><h3>Contexte &amp; problème</h3><p>Le marché du fitness marocain et ses lacunes outils</p></div>
+        <div class="agenda-item reveal"><span class="agenda-n">02</span><h3>La solution</h3><p>Ce que PowerGym Pro change concrètement</p></div>
+        <div class="agenda-item reveal"><span class="agenda-n">03</span><h3>Positionnement</h3><p>Face à Excel, MyGym, WodGuru, Mindbody</p></div>
+        <div class="agenda-item reveal"><span class="agenda-n">04</span><h3>Architecture</h3><p>Stack technique &amp; conception 3-tiers</p></div>
+        <div class="agenda-item reveal"><span class="agenda-n">05</span><h3>Données</h3><p>Modèle relationnel &amp; isolation multi-tenant</p></div>
+        <div class="agenda-item reveal"><span class="agenda-n">06</span><h3>Le produit</h3><p>Modules, écrans réels, tableau de bord</p></div>
+        <div class="agenda-item reveal"><span class="agenda-n">07</span><h3>Défis &amp; bilan</h3><p>Difficultés techniques et perspectives</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — CONTEXTE -->
+  <section class="slide" data-title="Contexte & problématique" id="slide-2">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">03 — CONTEXTE &amp; PROBLÉMATIQUE</p>
+      <h2 class="slide-title reveal">Un marché en croissance, des outils à la traîne</h2>
+      <div class="context-grid">
+        <div class="stat-strip reveal-group">
+          <div class="stat-block reveal">
+            <span class="stat-num" data-count="1200" data-suffix="+">0</span>
+            <span class="stat-label">salles de sport enregistrées au Maroc en 2025</span>
+          </div>
+          <div class="stat-block reveal">
+            <span class="stat-num" data-count="80" data-suffix="%">0</span>
+            <span class="stat-label">de structures indépendantes, petites &amp; moyennes</span>
+          </div>
+          <div class="stat-block reveal">
+            <span class="stat-num" data-count="8" data-prefix="3–">0</span>
+            <span class="stat-label">coachs en moyenne, 80 à 500 adhérents par salle</span>
+          </div>
+        </div>
+        <div class="quote-block reveal">
+          <p>« Comment doter les salles de sport marocaines d'un outil moderne, abordable et adapté à leurs réalités locales, capable de centraliser adhérents, coachs, paiements, shop et reporting en une seule plateforme&nbsp;? »</p>
+          <span class="quote-tag">— Problématique du projet</span>
+        </div>
+      </div>
+      <div class="pain-row reveal-group">
+        <div class="pain reveal"><i class="ico-x"></i>Tableurs Excel &amp; registres papier — aucune sécurité, aucune traçabilité</div>
+        <div class="pain reveal"><i class="ico-x"></i>SaaS importés d'Europe — devise €, tarif mensuel, pas de norme CNSS</div>
+        <div class="pain reveal"><i class="ico-x"></i>ERP généralistes — surdimensionnés, longs à déployer, coûteux à former</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — L'EXISTANT -->
+  <section class="slide" data-title="Étude de l'existant" id="slide-3">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">04 — ÉTUDE DE L'EXISTANT</p>
+      <h2 class="slide-title reveal">Quatre familles de solutions, aucune complète</h2>
+      <div class="table-wrap reveal">
+        <table class="pro-table">
+          <thead>
+            <tr><th>Catégorie</th><th>Exemples</th><th>Avantage</th><th>Limite structurante</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Tableurs &amp; papier</td><td>Excel, Sheets</td><td>Gratuit, familier</td><td class="neg">Aucune sécurité ni automatisation</td></tr>
+            <tr><td>SaaS internationaux</td><td>MyGym, WodGuru, Mindbody</td><td>Fonctions riches</td><td class="neg">Coût mensuel élevé, devise €</td></tr>
+            <tr><td>ERP généralistes</td><td>SAP, Odoo, Dolibarr</td><td>Modules financiers complets</td><td class="neg">Surdimensionnés, déploiement long</td></tr>
+            <tr><td>Solutions artisanales</td><td>Scripts, Access</td><td>Sur-mesure</td><td class="neg">Non maintenables, pas de SAV</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="gap-line reveal">Le vide entre ces quatre familles est exactement là où se positionne <strong>PowerGym Pro</strong>.</p>
+    </div>
+  </section>
+
+  <!-- 05 — LA SOLUTION -->
+  <section class="slide" data-title="La solution" id="slide-4">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">05 — LA SOLUTION</p>
+      <h2 class="slide-title reveal">Une plateforme, tout-en-un, pensée Maroc</h2>
+      <div class="pillars reveal-group">
+        <div class="pillar reveal">
+          <span class="pillar-tag">MANAGE</span>
+          <h3>Centraliser</h3>
+          <p>Adhérents, plans, paiements, coachs, shop et dépenses dans une seule application — fini les 4 outils dispersés.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar-tag">TRAIN</span>
+          <h3>Automatiser</h3>
+          <p>Reçus PDF, calcul de paie, déduction de stock, alertes de renouvellement — sans ressaisie manuelle.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar-tag">GROW</span>
+          <h3>Piloter</h3>
+          <p>Tableau de bord analytique en temps réel : MRR, rétention, profit net, top plans.</p>
+        </div>
+      </div>
+      <div class="diff-grid reveal-group">
+        <div class="diff reveal"><i class="ico-check"></i>Devise MAD native</div>
+        <div class="diff reveal"><i class="ico-check"></i>Bulletins de paie normes CNSS</div>
+        <div class="diff reveal"><i class="ico-check"></i>Facturation ICE / IF / RC / TVA</div>
+        <div class="diff reveal"><i class="ico-check"></i>Bilingue français / arabe</div>
+        <div class="diff reveal"><i class="ico-check"></i>Multi-salles depuis une installation</div>
+        <div class="diff reveal"><i class="ico-check"></i>Licence perpétuelle, sans abonnement</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 — COMPARATIF -->
+  <section class="slide" data-title="Comparatif marché" id="slide-5">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">06 — POSITIONNEMENT</p>
+      <h2 class="slide-title reveal">Ce que PowerGym Pro couvre — et les autres non</h2>
+      <div class="table-wrap reveal">
+        <table class="pro-table compare">
+          <thead>
+            <tr><th>Critère</th><th>Excel</th><th>MyGym</th><th>WodGuru</th><th>Mindbody</th><th class="hl">PowerGym Pro</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Devise MAD native</td><td class="x">✗</td><td class="x">✗</td><td class="x">✗</td><td class="x">✗</td><td class="hl ok">✓</td></tr>
+            <tr><td>Bulletins CNSS</td><td class="x">✗</td><td class="x">✗</td><td class="x">✗</td><td class="x">✗</td><td class="hl ok">✓</td></tr>
+            <tr><td>QR Check-in</td><td class="x">✗</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="hl ok">✓</td></tr>
+            <tr><td>Multi-tenant</td><td class="x">✗</td><td class="ok">✓</td><td class="x">✗</td><td class="ok">✓</td><td class="hl ok">✓</td></tr>
+            <tr><td>Shop POS intégré</td><td class="x">✗</td><td class="ok">✓</td><td class="x">✗</td><td class="ok">✓</td><td class="hl ok">✓</td></tr>
+            <tr><td>Paie coach automatisée</td><td class="x">✗</td><td class="x">✗</td><td class="mid">~</td><td class="x">✗</td><td class="hl ok">✓</td></tr>
+            <tr><td>Licence perpétuelle</td><td class="mid">—</td><td class="x">✗</td><td class="x">✗</td><td class="x">✗</td><td class="hl ok">✓</td></tr>
+            <tr><td>Prix indicatif</td><td>0 MAD</td><td>~250 €/mois</td><td>~150 €/mois</td><td>~200 €/mois</td><td class="hl price">2 490 MAD <span>unique</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 — ARCHITECTURE -->
+  <section class="slide" data-title="Architecture technique" id="slide-6">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">07 — ARCHITECTURE TECHNIQUE</p>
+      <h2 class="slide-title reveal">Une architecture 3-tiers, stricte et traçable</h2>
+      <div class="arch-wrap reveal">
+        <svg class="arch-svg" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet">
+          <line x1="220" y1="150" x2="380" y2="150" class="arch-link" />
+          <line x1="620" y1="150" x2="780" y2="150" class="arch-link" />
+          <polygon points="380,145 380,155 372,150" class="arch-arrow"/>
+          <polygon points="780,145 780,155 772,150" class="arch-arrow"/>
+        </svg>
+        <div class="arch-tiers">
+          <div class="tier">
+            <span class="tier-label">PRÉSENTATION</span>
+            <h4>Browser</h4>
+            <ul><li>Blade</li><li>Tailwind CSS 3</li><li>Alpine.js 3</li><li>Axios</li></ul>
+          </div>
+          <div class="tier tier-mid">
+            <span class="tier-label">LOGIQUE APPLICATIVE</span>
+            <h4>Laravel 12</h4>
+            <ul><li>PHP 8.2 · Eloquent</li><li>Contrôleurs · Middleware</li><li>FormRequest · Policies</li></ul>
+          </div>
+          <div class="tier">
+            <span class="tier-label">PERSISTANCE</span>
+            <h4>MySQL 8</h4>
+            <ul><li>InnoDB · ACID</li><li>utf8mb4</li><li>Migrations versionnées</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="stack-row reveal-group">
+        <span class="stack-chip reveal">Laravel 12</span>
+        <span class="stack-chip reveal">PHP 8.2</span>
+        <span class="stack-chip reveal">MySQL 8</span>
+        <span class="stack-chip reveal">Tailwind 3.4</span>
+        <span class="stack-chip reveal">Alpine.js 3.13</span>
+        <span class="stack-chip reveal">Vite 7</span>
+        <span class="stack-chip reveal">DomPDF 3</span>
+        <span class="stack-chip reveal">Pest PHP 2</span>
+        <span class="stack-chip reveal">GSAP 3.12</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 — DONNÉES / MULTI-TENANT -->
+  <section class="slide" data-title="Modèle de données" id="slide-7">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">08 — MODÈLE DE DONNÉES</p>
+      <h2 class="slide-title reveal">Isolation multi-tenant, au niveau requête</h2>
+      <div class="db-wrap">
+        <div class="db-diagram reveal">
+          <div class="gym-node active">
+            <span>GYM A</span>
+            <div class="entity-orbit">
+              <div class="entity">MEMBER</div>
+              <div class="entity">PLAN</div>
+              <div class="entity">SUBSCRIPTION</div>
+              <div class="entity">PAYMENT</div>
+              <div class="entity">TRAINER</div>
+              <div class="entity">EXPENSE</div>
+              <div class="entity">SHOP_PRODUCT</div>
+            </div>
+          </div>
+          <div class="gym-node muted">
+            <span>GYM B</span>
+            <div class="entity-orbit small">
+              <div class="entity">MEMBER</div>
+              <div class="entity">PAYMENT</div>
+              <div class="entity">TRAINER</div>
+            </div>
+          </div>
+        </div>
+        <div class="db-side reveal-group">
+          <p class="db-note reveal">Un <code>GlobalScope</code> Eloquent (<code>GymScope</code>) injecte automatiquement <code>WHERE id_gym = X</code> sur chaque requête. Aucune salle ne voit jamais les données d'une autre.</p>
+          <div class="code-card reveal">
+<pre><code>CREATE TABLE members (
+  id_member INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id_gym    INT UNSIGNED NOT NULL,
+  qr_token  CHAR(32) NOT NULL UNIQUE,
+  CONSTRAINT fk_member_gym FOREIGN KEY (id_gym)
+    REFERENCES gyms(id_gym) ON DELETE CASCADE,
+  INDEX idx_member_gym (id_gym)
+) ENGINE=InnoDB;</code></pre>
+          </div>
+          <div class="mini-stats reveal">
+            <div><strong>13</strong><span>entités principales</span></div>
+            <div><strong>10</strong><span>règles de gestion</span></div>
+            <div><strong>6</strong><span>index de performance</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 — MODULES -->
+  <section class="slide" data-title="Les 12 modules" id="slide-8">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">09 — CATALOGUE FONCTIONNEL</p>
+      <h2 class="slide-title reveal">12 modules, chacun activable indépendamment</h2>
+      <div class="modules-grid reveal-group">
+        <div class="module reveal"><span class="mid">M01</span><h4>Auth &amp; RBAC</h4><p>Rôles, policies, 2FA TOTP</p></div>
+        <div class="module reveal"><span class="mid">M02</span><h4>Members</h4><p>CRUD, QR personnel, RGPD</p></div>
+        <div class="module reveal"><span class="mid">M03</span><h4>Plans</h4><p>Abonnements, alertes renouvellement</p></div>
+        <div class="module reveal"><span class="mid">M04</span><h4>Payments</h4><p>Reçus PDF, multi-méthode</p></div>
+        <div class="module reveal"><span class="mid">M05</span><h4>QR Check-in</h4><p>Scan caméra, AJAX temps réel</p></div>
+        <div class="module reveal"><span class="mid">M06</span><h4>Coaches</h4><p>Planning drag-and-drop</p></div>
+        <div class="module reveal"><span class="mid">M07</span><h4>Payroll</h4><p>Paie auto, bulletins PDF</p></div>
+        <div class="module reveal"><span class="mid">M08</span><h4>Shop POS</h4><p>Caisse, stock ACID, ticket Z</p></div>
+        <div class="module reveal"><span class="mid">M09</span><h4>Expenses</h4><p>Dépenses catégorisées</p></div>
+        <div class="module reveal"><span class="mid">M10</span><h4>Dashboard</h4><p>MRR, rétention, KPIs temps réel</p></div>
+        <div class="module reveal"><span class="mid">M11</span><h4>Kanban</h4><p>Tâches internes drag-and-drop</p></div>
+        <div class="module reveal"><span class="mid">M12</span><h4>License</h4><p>Anti-tamper, Machine ID</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 — PRODUIT EN ACTION -->
+  <section class="slide" data-title="Le produit en action" id="slide-9">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">10 — LE PRODUIT EN ACTION</p>
+      <h2 class="slide-title reveal">Des écrans réels, pas des maquettes</h2>
+      <div class="shots-grid reveal-group">
+        <figure class="shot reveal shot-big">
+          <div class="browser-bar"><span></span><span></span><span></span><em>powergym.local/plans</em></div>
+          <img src="assets/screencapture-127-0-0-1-8000-plans-2026-03-27-21_55_25.png" alt="Gestion des plans d'abonnement">
+          <figcaption>Gestion des plans — tarification &amp; durée d'accès</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <div class="browser-bar"><span></span><span></span><span></span><em>powergym.local/coaches</em></div>
+          <img src="assets/screencapture-127-0-0-1-8000-coaches-2026-03-27-21_59_02.png" alt="Gestion des coachs">
+          <figcaption>Coachs — salaire &amp; statut de paie</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <div class="browser-bar"><span></span><span></span><span></span><em>powergym.local/expenses</em></div>
+          <img src="assets/screencapture-127-0-0-1-8000-expenses-2026-03-27-21_59_17.png" alt="Suivi des dépenses">
+          <figcaption>Dépenses — catégorisées, imprimables</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 — DASHBOARD / KPIs -->
+  <section class="slide" data-title="Dashboard & KPIs" id="slide-10">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">11 — TABLEAU DE BORD</p>
+      <h2 class="slide-title reveal">La santé financière d'une salle, en un coup d'œil</h2>
+      <div class="kpi-layout">
+        <div class="kpi-numbers reveal-group">
+          <div class="kpi reveal">
+            <span class="kpi-label">Revenu — mars 2026</span>
+            <span class="kpi-num" data-count="20380" data-suffix=" DH">0</span>
+            <span class="kpi-delta up">↑ 32% vs février</span>
+          </div>
+          <div class="kpi reveal">
+            <span class="kpi-label">Dépenses</span>
+            <span class="kpi-num" data-count="3350" data-suffix=" DH">0</span>
+            <span class="kpi-delta up">↑ 5% vs février</span>
+          </div>
+          <div class="kpi reveal kpi-hero">
+            <span class="kpi-label">Profit net</span>
+            <span class="kpi-num" data-count="17030" data-suffix=" DH">0</span>
+            <span class="kpi-delta up">66% de marge</span>
+          </div>
+          <div class="kpi reveal small">
+            <span class="kpi-num" data-count="13">0</span>
+            <span class="kpi-label">membres actifs</span>
+          </div>
+          <div class="kpi reveal small">
+            <span class="kpi-num" data-count="7">0</span>
+            <span class="kpi-label">plans actifs</span>
+          </div>
+        </div>
+        <figure class="shot dash-shot reveal">
+          <div class="browser-bar"><span></span><span></span><span></span><em>powergym.local/dashboard</em></div>
+          <img src="assets/dashboard1.png" alt="Tableau de bord analytique PowerGym Pro">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 — DÉFIS TECHNIQUES -->
+  <section class="slide" data-title="Défis techniques" id="slide-11">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">12 — DÉFIS TECHNIQUES</p>
+      <h2 class="slide-title reveal">Ce qui a réellement été difficile</h2>
+      <div class="challenge-grid reveal-group">
+        <div class="challenge reveal">
+          <span class="ch-num">01</span>
+          <h4>Isolation multi-tenant</h4>
+          <p>Appliquer <code>GymScope</code> à 100% des modèles sans jamais laisser fuiter une requête entre salles.</p>
+        </div>
+        <div class="challenge reveal">
+          <span class="ch-num">02</span>
+          <h4>Génération PDF fiable</h4>
+          <p>DomPDF ne supporte pas flex/grid modernes — retour aux tables HTML pour les reçus et bulletins.</p>
+        </div>
+        <div class="challenge reveal">
+          <span class="ch-num">03</span>
+          <h4>Licence anti-tamper</h4>
+          <p>Détection de recul d'horloge système + Machine ID SHA256 cross-platform (Windows/Mac/Linux).</p>
+        </div>
+        <div class="challenge reveal">
+          <span class="ch-num">04</span>
+          <h4>Concurrence sur le stock</h4>
+          <p>Transactions ACID + <code>lockForUpdate()</code> pour éviter tout stock négatif lors de ventes simultanées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 — ROADMAP -->
+  <section class="slide" data-title="Perspectives" id="slide-12">
+    <div class="slide-inner">
+      <p class="eyebrow reveal">13 — PERSPECTIVES</p>
+      <h2 class="slide-title reveal">Et après la soutenance&nbsp;?</h2>
+      <div class="roadmap reveal-group">
+        <div class="rm-item reveal"><span class="rm-tag">v1.1 · Q3 2026</span><p>Application mobile native (Flutter) coachs &amp; adhérents</p></div>
+        <div class="rm-item reveal"><span class="rm-tag">v1.2 · Q4 2026</span><p>Module e-learning intégré</p></div>
+        <div class="rm-item reveal"><span class="rm-tag">v1.3 · Q1 2027</span><p>Passerelle de paiement CMI / Stripe / PayPal</p></div>
+        <div class="rm-item reveal"><span class="rm-tag">v2.0 · Q2 2027</span><p>Internationalisation FR/AR + multi-pays</p></div>
+        <div class="rm-item reveal"><span class="rm-tag">v2.1</span><p>API publique documentée</p></div>
+        <div class="rm-item reveal"><span class="rm-tag">v2.2</span><p>Marketing automation (SMS, email, push)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 — MERCI -->
+  <section class="slide" data-title="Merci" id="slide-13">
+    <div class="slide-inner cover closing">
+      <div class="reveal-group">
+        <p class="eyebrow reveal">MERCI DE VOTRE ATTENTION</p>
+        <h2 class="closing-title reveal">Des questions&nbsp;?</h2>
+        <p class="cover-desc reveal">PowerGym Pro — Manage. Train. Grow.<br>Une plateforme complète, abordable, pensée pour les salles de sport marocaines.</p>
+        <div class="cover-badges reveal">
+          <span class="badge">Laravel 12</span>
+          <span class="badge">Multi-tenant</span>
+          <span class="badge">Licence perpétuelle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- SIDE NAVIGATION -->
+<nav class="side-nav" id="sideNav" aria-label="Navigation des diapositives"></nav>
+
+<!-- BOTTOM CHROME -->
+<footer class="chrome-bottom">
+  <div class="counter"><span id="counterCurrent">01</span><span class="counter-sep">/</span><span id="counterTotal">14</span></div>
+  <div class="slide-title-tag" id="slideTitleTag">Ouverture</div>
+  <div class="nav-buttons">
+    <button id="prevBtn" class="nav-btn" aria-label="Diapositive précédente">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button id="nextBtn" class="nav-btn primary" aria-label="Diapositive suivante">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
